@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BandLab Specialist</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <h1>BandLab Specialist</h1>
+    <p>@bandlabspecialist</p>
+  </div>
+
+  <div class="menu-box">
+
+    <h2>🎵 Order Lagu Request</h2>
+
+    <div class="price">
+      <span>Basic Project</span>
+      <b>Rp35.000</b>
+    </div>
+
+    <div class="price">
+      <span>Premium Project</span>
+      <b>Rp80.000</b>
+    </div>
+
+    <div class="price">
+      <span>Exclusive Full Music</span>
+      <b>Rp100.000</b>
+    </div>
+
+  </div>
+
+  <div class="tracker-box">
+
+    <h2>📦 Cek Status Order</h2>
+
+    <input
+      type="text"
+      id="invoice"
+      placeholder="#BAND001"
+    >
+
+    <button onclick="cekStatus()">
+      Cek Status
+    </button>
+
+    <div id="hasil"></div>
+
+  </div>
+
+</div>
+
+<script src="database.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 const database = {
 
-  "#BAND001": {
+  "#BAND00": {
     nama: "Customer Basic",
     status: "Sedang Istirahat"
   },

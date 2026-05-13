@@ -6,28 +6,46 @@
 
 body{
   font-family:Arial, sans-serif;
-  background:linear-gradient(
-    135deg,
-    #ff4fd8,
-    #ff7ce8,
-    #ffc4f4
-  );
+  background:#ff4fc3;
   min-height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
-  padding:20px;
+  overflow:hidden;
+  position:relative;
+}
+
+.bg-animation{
+  position:absolute;
+  width:200%;
+  height:200%;
+  background:
+    radial-gradient(circle,#ffffff33 1px,transparent 1px);
+  background-size:40px 40px;
+  animation:moveBg 20s linear infinite;
+}
+
+@keyframes moveBg{
+  0%{
+    transform:translate(0,0);
+  }
+  100%{
+    transform:translate(-200px,-200px);
+  }
 }
 
 .container{
   width:100%;
   max-width:420px;
+  padding:20px;
+  z-index:1;
 }
 
 .header{
   text-align:center;
   color:white;
-  margin-bottom:20px;
+  margin-bottom:25px;
+  animation:fadeDown 1s ease;
 }
 
 .header h1{
@@ -36,44 +54,50 @@ body{
 }
 
 .header p{
-  font-size:15px;
   opacity:0.9;
 }
 
-.menu-box,
+@keyframes fadeDown{
+  from{
+    opacity:0;
+    transform:translateY(-20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
 .tracker-box{
   background:white;
-  border-radius:20px;
-  padding:20px;
-  margin-bottom:20px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  border-radius:25px;
+  padding:25px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  animation:zoomIn 0.8s ease;
 }
 
-.menu-box h2,
+@keyframes zoomIn{
+  from{
+    opacity:0;
+    transform:scale(0.9);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
 .tracker-box h2{
   color:#ff1493;
-  margin-bottom:15px;
-}
-
-.price{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:#ffe4f3;
-  padding:14px;
-  border-radius:12px;
-  margin-bottom:12px;
-}
-
-.price b{
-  color:#ff1493;
+  margin-bottom:20px;
+  text-align:center;
 }
 
 input{
   width:100%;
-  padding:15px;
+  padding:16px;
   border:none;
-  border-radius:12px;
+  border-radius:14px;
   background:#ffe4f3;
   outline:none;
   font-size:15px;
@@ -82,9 +106,9 @@ input{
 
 button{
   width:100%;
-  padding:15px;
+  padding:16px;
   border:none;
-  border-radius:12px;
+  border-radius:14px;
   background:#ff1493;
   color:white;
   font-size:16px;
@@ -96,26 +120,44 @@ button:hover{
   background:#ff0080;
 }
 
-#hasil{
+#loadingBox{
   margin-top:20px;
+}
+
+.loading-step{
+  background:#ffe4f3;
+  padding:12px;
+  border-radius:12px;
+  margin-bottom:10px;
+  color:#ff1493;
+  animation:fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
 .result-box{
   background:#ffe4f3;
-  padding:15px;
-  border-radius:12px;
-}
-
-.result-box h3{
-  margin-bottom:8px;
+  padding:18px;
+  border-radius:15px;
+  margin-top:15px;
+  animation:fadeIn 0.5s ease;
 }
 
 .success{
-  color:#ff1493;
+  color:#16a34a;
   font-weight:bold;
 }
 
 .error{
-  color:red;
+  color:#dc2626;
   font-weight:bold;
 }
